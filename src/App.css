@@ -1,0 +1,133 @@
+.App {
+  text-align: center;
+  background-color: #cac9c3;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.navbar-brand {
+  color: #b9ffd8 !important;
+  font-weight: 700;
+}
+
+.main-first {
+  padding-top: 50px;
+}
+
+#root {
+  background-color: #f3fbfa;
+}
+
+.Box-porto {
+  background-color: #fdfff766;
+  border-radius: 5px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 5px #919c80;
+  margin: 2% 1.65%;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.Box-porto h3 {
+  color: #505050;
+  padding-top: 2%;
+  text-shadow: 1px 1px 2px #4ba986;
+  position: absolute;
+  top: 1%;
+}
+
+.Box-porto p {
+  color: #505050;
+  text-shadow: 1px 1px 2px #4ba986;
+}
+
+.Box-porto button {
+  position: absolute;
+  bottom: 5%;
+  opacity: 0.7;
+}
+
+.Box-porto:hover {
+  background-color: #fdfff724;
+  transition: background-color 0.3s ease;
+}
+
+.Box-movies {
+  height: 500px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  margin-top: 20px;
+  background-position: center;
+}
+
+.Box-movies h3 {
+  background-color: #f5f5dc94;
+  font-size: 18px;
+  font-weight: 700;
+  text-shadow: 1px 1px 4px white;
+  padding: 2%;
+}
+
+.Box-movies .publishMovies {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: rgb(0 0 0);
+  font-weight: 700;
+  margin: 0;
+  background: #94c38c96;
+  padding: 2%;
+}
+
+.Box-movies .imdbMovies {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.Box-movies .fa-star {
+  color: gold;
+  padding-right: 5px;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
