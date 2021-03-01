@@ -11,7 +11,7 @@ class Body extends Component {
       "project6",
       "project7",
       "project8",
-      "project9",
+      "projectt9",
     ],
   };
   render() {
