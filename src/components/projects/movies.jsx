@@ -3,6 +3,7 @@ import { getMovies } from "../../services/fakemovieservices";
 import Like from "../common/like";
 import Pagination from "../common/pagination";
 import { paginate } from "../utils/paginate";
+import { Link } from "react-router-dom";
 
 class Movies extends Component {
   state = {
@@ -28,41 +29,49 @@ class Movies extends Component {
 
     const movies = paginate(allMovies, currentPage, pageSize);
     return (
-      <div style={{ padding: "50px 0" }} className="container">
-        <div className="row">
-          {movies.map((movie) => (
-            <div key={movie._id} className="col-xs-12 col-sm-6 col-md-4">
-              <div
-                className="Box-movies"
-                style={{
-                  backgroundImage: `url(
+      <React.Fragment>
+        <div
+          style={{ padding: "50px 0", position: "relative" }}
+          className="container"
+        >
+          <div className="row">
+            {movies.map((movie) => (
+              <div key={movie._id} className="col-xs-12 col-sm-6 col-md-4">
+                <div
+                  className="Box-movies"
+                  style={{
+                    backgroundImage: `url(
                     ${movie.imageUrl}
                   )`,
-                }}
-              >
-                <h3>{movie.title}</h3>
-                <p className="publishMovies">{movie.published}</p>
-                <p className="imdbMovies">
-                  <i className="fa fa-star" aria-hidden="true"></i>
-                  {movie.imdb}
-                </p>
-                <div className="likeMovie">
-                  <Like
-                    liked={movie.liked}
-                    onClick={() => this.handleLike(movie)}
-                  />
+                  }}
+                >
+                  <h3>{movie.title}</h3>
+                  <p className="publishMovies">{movie.published}</p>
+                  <p className="imdbMovies">
+                    <i className="fa fa-star" aria-hidden="true"></i>
+                    {movie.imdb}
+                  </p>
+                  <div className="likeMovie">
+                    <Like
+                      liked={movie.liked}
+                      onClick={() => this.handleLike(movie)}
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          <Pagination
+            itemsCount={count}
+            pageSize={pageSize}
+            currentPage={currentPage}
+            onPageChange={this.handlePageChange}
+          />
         </div>
-        <Pagination
-          itemsCount={count}
-          pageSize={pageSize}
-          currentPage={currentPage}
-          onPageChange={this.handlePageChange}
-        />
-      </div>
+        <Link to="/fav-movie/new" className="btn btn-primary" id="btn-addmovie">
+          Add New Movie
+        </Link>
+      </React.Fragment>
     );
   }
 }

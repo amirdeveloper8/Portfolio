@@ -4,11 +4,13 @@ import "./App.css";
 import Movies from "./components/projects/movies";
 import { Route, Redirect, Switch } from "react-router-dom";
 import NotFound from "./components/notFound";
+import LoginForm from "./components/movieForm";
 
 function App() {
   return (
     <main className="container-fluid App">
       <Switch>
+        <Route path="/fav-movie/:id" component={LoginForm} />
         <Route path="/home" component={Body} />
         <Route path="/fav-movie" component={Movies} />
         <Route path="/not-found" component={NotFound} />
