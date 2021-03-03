@@ -19,6 +19,9 @@ class NavItems extends Component {
             <NavLink className="nav-item nav-link" to="/fav-movie">
               Movies
             </NavLink>
+            <NavLink className="nav-item nav-link" to="/todolist">
+              To do List
+            </NavLink>
           </div>
         </div>
       </nav>

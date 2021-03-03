@@ -129,6 +129,82 @@
   left: 2vw;
 }
 
+#toDoList {
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.checkToDo {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #0a521a;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.checkToDo:hover {
+  background-color: #b1ceb8b3;
+  transition: all 0.3 ease;
+}
+
+.checkToDo i {
+  opacity: 0;
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
+
+.checkToDo i:hover {
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+#fullDate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  border-bottom: 1px solid olive;
+}
+
+#headertext {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#fullDate h3 {
+  padding-right: 10px;
+  font-size: 22px;
+}
+
+.addTask {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.addText i {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.addText p {
+  padding-right: 5px;
+  margin: 0;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
