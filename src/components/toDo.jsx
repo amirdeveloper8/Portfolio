@@ -11,9 +11,9 @@ class ToDo extends Component {
   submitUpdate = (value) => {
     this.props.updateTodo(this.state.edit.id, value);
     const { edit } = this.state;
-    edit.value = value;
+    edit.value = "";
+    edit.id = null;
     this.setState({ edit });
-    console.log(edit);
   };
 
   render() {
@@ -22,7 +22,11 @@ class ToDo extends Component {
     const { edit } = this.state;
 
     if (edit.id) {
-      return <ToDoForm edit={edit} onSubmit={this.submitUpdate} />;
+      return (
+        <div>
+          <ToDoForm edit={edit} onSubmit={this.submitUpdate} />
+        </div>
+      );
     }
     return todos.map((todo, index) => (
       <div

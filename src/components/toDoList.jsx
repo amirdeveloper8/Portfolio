@@ -20,12 +20,12 @@ class ToDoList extends Component {
       return;
     }
 
-    this.setState({
-      todos: (prev) =>
-        prev.map((item) => (item.id === todoId ? newValue : item)),
-    });
+    const { todos } = this.state;
 
-    console.log(this.state.todos);
+    const updated = todos.map((todo) => (todo.id === todoId ? newValue : todo));
+
+    this.setState({ todos: updated });
+    console.log(todos);
   };
 
   removeTodo = (id) => {
