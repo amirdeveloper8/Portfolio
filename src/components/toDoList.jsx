@@ -45,7 +45,7 @@ class ToDoList extends Component {
 
   render() {
     return (
-      <div className="container" id="toDoList">
+      <div className="container-fluid" id="toDoList">
         <h2>What's the Plan for Today ?</h2>
         <ToDoForm onSubmit={this.addTodo} />
         <ToDo

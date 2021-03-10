@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   background-color: #cac9c3;
+  padding: 0 !important;
 }
 
 .App-logo {
@@ -128,81 +129,136 @@
   top: 80px;
   left: 2vw;
 }
-
 #toDoList {
-  padding-top: 2%;
-  padding-bottom: 2%;
+  background: linear-gradient(
+    90deg,
+    rgb(1, 54, 52) 0%,
+    rgb(100, 237, 255) 100%
+  );
+  padding: 5%;
 }
 
-.checkToDo {
-  width: 20px;
-  height: 20px;
-  border: 1px solid #0a521a;
-  border-radius: 50px;
+.todo-app {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: start;
+  width: 520px;
+  min-height: 600px;
+  background: #161a2b;
+  text-align: center;
+  margin: 128px auto;
+  border-radius: 10px;
+  padding-bottom: 32px;
+}
+
+#toDoList h1 {
+  margin: 32px 0;
+  color: #fff;
+  font-size: 24px;
+}
+
+.complete {
+  text-decoration: line-through;
+  opacity: 0.4;
+}
+
+.todo-form {
+  margin-bottom: 32px;
+}
+
+.todo-input {
+  padding: 14px 32px 14px 16px;
+  border-radius: 4px 0 0 4px;
+  border: 2px solid rgb(78, 92, 89);
+  outline: none;
+  width: 320px;
+  background: transparent;
+  color: #fff;
+}
+
+.todo-input::placeholder {
+  color: #e2e2e2;
+}
+
+.todo-button {
+  padding: 16px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  outline: none;
+  background: linear-gradient(90deg, rgb(78, 92, 89) 0%, rgb(20, 36, 35) 100%);
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.todo-input.edit {
+  border: 2px solid rgba(7, 123, 43, 1);
+}
+
+.todo-button.edit {
+  background: linear-gradient(
+    90deg,
+    rgba(7, 123, 43, 1) 0%,
+    rgba(7, 37, 0, 1) 100%
+  );
+  padding: 16px 22px;
+}
+
+.todo-container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.todo-row {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  margin: 4px auto;
+  color: #fff;
+  background: linear-gradient(90deg, #243b55 0%, #4c5d7e 100%);
+  padding: 16px;
+  border-radius: 5px;
+  width: 50%;
+  box-shadow: 1px 1px 2px #457745;
+}
+
+.todo-row:nth-child(4n + 1) {
+  background: linear-gradient(90deg, #2c3e50 0%, #bdc3c7 100%);
+}
+
+.todo-row:nth-child(4n + 2) {
+  background: linear-gradient(90deg, #48b1bf 0%, #06beb6 100%);
+}
+
+.todo-row:nth-child(4n + 3) {
+  background: linear-gradient(90deg, #185a9d 0%, #43cea2 100%);
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
   cursor: pointer;
 }
 
-.checkToDo:hover {
-  background-color: #b1ceb8b3;
-  transition: all 0.3 ease;
+.delete-icon {
+  margin-right: 5px;
+  color: #fff;
 }
 
-.checkToDo i {
-  opacity: 0;
-  font-size: 13px;
-  transition: all 0.3s ease;
+.edit-icon {
+  color: #fff;
 }
 
-.checkToDo i:hover {
-  opacity: 0.8;
-  transition: all 0.3s ease;
-}
+@media (max-width: 468px) {
+  .todo-row {
+    width: 80%;
+  }
 
-#fullDate {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 180px;
-  border-bottom: 1px solid olive;
-}
-
-#headertext {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#fullDate h3 {
-  padding-right: 10px;
-  font-size: 22px;
-}
-
-.addTask {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.addText {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-left: 10px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.addText i {
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.addText p {
-  padding-right: 5px;
-  margin: 0;
+  .todo-input {
+    width: 200px;
+  }
 }
 
 @keyframes App-logo-spin {

@@ -23,17 +23,36 @@ class ToDoForm extends Component {
 
   render() {
     const { input } = this.state;
+
     return (
       <form className="todo-form" onSubmit={this.handleSubmit}>
-        <input
-          type="text"
-          placeholder="Add a Task"
-          value={input}
-          name="text"
-          className="todo-input"
-          onChange={this.handleChange}
-        />
-        <button className="todo-button">Add Task</button>
+        {this.props.edit ? (
+          <div>
+            <input
+              type="text"
+              placeholder="Update your item"
+              value={input}
+              name="text"
+              className="todo-input edit"
+              onChange={this.handleChange}
+              ref={(input) => input && input.focus()}
+            />
+            <button className="todo-button edit">Update</button>
+          </div>
+        ) : (
+          <div>
+            <input
+              type="text"
+              placeholder="Add a Task"
+              value={input}
+              name="text"
+              className="todo-input"
+              onChange={this.handleChange}
+              ref={(input) => input && input.focus()}
+            />
+            <button className="todo-button">Add Task</button>
+          </div>
+        )}
       </form>
     );
   }
