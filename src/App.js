@@ -6,13 +6,17 @@ import { Route, Redirect, Switch } from "react-router-dom";
 import NotFound from "./components/notFound";
 import LoginForm from "./components/movieForm";
 import ToDoList from "./components/toDoList";
+import QuizzApp from "./components/quizzApp";
+import QuizzContent from "./components/quizzCont";
 
 function App() {
   return (
     <main className="container-fluid App">
       <Switch>
+        <Route path="/quizz-app/content" component={QuizzContent} />
         <Route path="/fav-movie/:id" component={LoginForm} />
         <Route path="/todolist" component={ToDoList} />
+        <Route path="/quizz-app" component={QuizzApp} />
         <Route path="/home" component={Body} />
         <Route path="/fav-movie" component={Movies} />
         <Route path="/not-found" component={NotFound} />

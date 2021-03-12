@@ -20,7 +20,10 @@ class NavItems extends Component {
               Movies
             </NavLink>
             <NavLink className="nav-item nav-link" to="/todolist">
-              To do List
+              Todo List
+            </NavLink>
+            <NavLink className="nav-item nav-link" to="/quizz-app">
+              Quizz App
             </NavLink>
           </div>
         </div>
