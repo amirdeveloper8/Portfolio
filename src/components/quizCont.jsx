@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const QuizzContent = () => {
+const quizContent = () => {
   return (
-    <div className="quizz-app">
-      <div className="quizz-cont">
-        <h3>Quizz App</h3>
+    <div className="quiz-app">
+      <div className="quiz-cont">
+        <h3>quiz App</h3>
         <p>
           لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
           استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
@@ -20,14 +20,16 @@ const QuizzContent = () => {
           قرار گیرد.
         </p>
         <div className="button-sec">
-          <Link to="/quizz-app">
+          <Link to="/quiz-app">
             <button className="btn btn-danger">بازگشت</button>
           </Link>
-          <button className="btn btn-primary">شروع</button>
+          <Link to="/quiz-app/questions">
+            <button className="btn btn-primary">شروع</button>
+          </Link>
         </div>
       </div>
     </div>
   );
 };
 
-export default QuizzContent;
+export default quizContent;
