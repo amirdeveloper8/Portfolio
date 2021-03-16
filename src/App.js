@@ -9,12 +9,14 @@ import ToDoList from "./components/toDoList";
 import quizApp from "./components/quizApp";
 import quizContent from "./components/quizCont";
 import QuizQuestions from "./components/quizQuestions";
+import Recipe from "./components/recipe";
 
 function App() {
   return (
     <main className="container-fluid App">
       <Switch>
         <Route path="/quiz-app/content" component={quizContent} />
+        <Route path="/recipe" component={Recipe} />
         <Route path="/quiz-app/questions" component={QuizQuestions} />
         <Route path="/fav-movie/:id" component={LoginForm} />
         <Route path="/todolist" component={ToDoList} />

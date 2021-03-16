@@ -23,7 +23,10 @@ class NavItems extends Component {
               Todo List
             </NavLink>
             <NavLink className="nav-item nav-link" to="/quiz-app">
-              quiz App
+              Quiz App
+            </NavLink>
+            <NavLink className="nav-item nav-link" to="/recipe">
+              Recipe
             </NavLink>
           </div>
         </div>
