@@ -1,18 +1,34 @@
 import React from "react";
+import { howR } from "../services/recipeHowTo";
 
 const Recipe = () => {
-  const APP_ID = "3ce0b77b";
-  const APP_KEY = "0612908fab0b3d078ba4852e9864b833";
+  const howRecipe = howR();
 
-  const exampleReq = `https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}`;
   return (
     <div className="recipe">
-      <form className="search-form">
-        <input type="text" className="serac-bar bg-light" />
-        <button type="submit" className="search-button btn-primary">
-          Search
-        </button>
-      </form>
+      <div className="header-recipe">
+        <img src="./images/lime-salmon.jpeg" alt="" />
+        <h1>Recipe App</h1>
+        <form className="search-form">
+          <input type="text" className="serac-recipe" />
+          <button type="submit" className="search-button-recipe">
+            <i class="fa fa-search"></i>
+          </button>
+        </form>
+      </div>
+      <div className="container recipe-details">
+        <div className="row">
+          {howRecipe.map((how) => (
+            <div className="col-lg-4 col-sm-6 col-xs-12">
+              <div className="recipe-box">
+                <img src={how.image} alt={how.title} />
+                <h5>{how.title}</h5>
+                <div>{how.excerpt}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
